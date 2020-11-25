@@ -6,36 +6,38 @@
     <title>Curso CSS Grid</title>
     <style>
         .container {
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-columns: 1fr;
             max-width: 900px;
             margin:auto;
             text-align: center;
         }
 
         .wrapper {
-            display: flex;
-            flex-direction: row;
+            display: grid;
+            grid-template-columns: 3fr 1fr;
             background-color: orange;
         }
 
         .main {
-            flex: 3;
+            
             background-color: aqua;
         }
 
         .sidebar {
-            flex: 1;
+            
             background-color: red;
         }
 
         header {
-            display: flex;
+            display: grid;
+            grid-template-columns: 1fr;
             background-color: green;
         }
 
         footer {
-            display: flex;
+            display: grid;
+            grid-template-columns: 1fr;
             background-color: grey;
         }
     </style>
@@ -62,7 +64,7 @@
             </div>
         </div>
         <footer>
-            <p>Mi footer con flexbox</p>
+            <p>Mi footer con grid</p>
         </footer>
    </div>
 </body> 
