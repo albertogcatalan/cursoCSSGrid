@@ -1,0 +1,44 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Curso CSS Grid</title>
+    <style>
+        .container {
+            display: grid;
+            grid-template-rows: [row-1-start] 1fr [row-2-start] 1fr [row-end];
+            grid-template-columns: [col-1-start] 1fr [col-2-start] 1fr [col-end];
+            max-width: 900px;
+            margin:auto;
+            text-align: center;
+            background-color: orange;
+        }
+
+        .item {
+            border: 1px solid black;
+            padding: 20px;
+            font-size: 30px;
+        }
+
+        .start {
+            grid-row: row-1-start / row-end;
+            grid-column: col-2-start / col-end;
+        }
+    </style>
+</head>
+
+<body>
+   <div class="container">
+        <div class="item start">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div>
+   </div>
+</body> 
+</html> 
