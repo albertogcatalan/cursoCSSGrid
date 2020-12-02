@@ -7,37 +7,41 @@
     <style>
         .container {
             display: grid;
-            grid-template-columns: 1fr;
+            grid-template-areas:
+                "header header"
+                "wrapper wrapper"
+                "footer footer";
+            grid-template-columns: 1fr 1fr;
             max-width: 900px;
             margin:auto;
             text-align: center;
         }
 
         .wrapper {
+            grid-area: wrapper;
             display: grid;
+            grid-template-areas: "main sidebar";
             grid-template-columns: 3fr 1fr;
             background-color: orange;
         }
 
         .main {
-            
+            grid-area: main;
             background-color: aqua;
         }
 
         .sidebar {
-            
+            grid-area: sidebar;
             background-color: red;
         }
 
         header {
-            display: grid;
-            grid-template-columns: 1fr;
+            grid-area: header;
             background-color: green;
         }
 
         footer {
-            display: grid;
-            grid-template-columns: 1fr;
+            grid-area: footer;
             background-color: grey;
         }
     </style>
