@@ -1,0 +1,151 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Curso CSS Grid</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        a {
+            color: indianred;
+            text-decoration: none;
+        }
+
+        body {
+            background-color: #eeeeee;
+            color: #000;
+            font-size: 16px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-areas:
+                "header header"
+                "main sidebar"
+                "footer footer";
+            grid-template-columns: 3fr 1fr;
+            grid-gap: 60px;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 60px;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .main {
+            grid-area: main;
+            text-align: center;
+        }
+
+        .main h2 {
+            font-size: 30px;
+            margin-bottom: 50px;
+        }
+
+        .main p {
+            margin-bottom: 50px;
+        }
+
+        .main img {
+            width: 100%;
+        }
+
+        .sidebar {
+            grid-area: sidebar;
+            padding: 20px;
+            border: 1px solid grey;
+        }
+
+        header {
+            grid-row: header-start / main-start;
+            grid-column: footer-start / sidebar-end;
+            color: indigo;
+            padding: 20px 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        header nav {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            list-style: none;
+            justify-self: start;
+            align-items: end;
+        }
+        header nav li {
+            margin-right: 15px;
+        }
+        header button {
+            border: none;
+            color: #fff;
+            background-color: indianred;
+            text-transform: uppercase;
+            justify-self: end;
+            padding: 8px 25px;
+        }
+
+        footer {
+            grid-area: footer;
+            color: indianred;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        footer p {
+            padding: 10px;
+            font-size: 12px;
+            color: grey;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                grid-template-columns: 1fr;
+                grid-template-areas:
+                    "header"
+                    "main"
+                    "sidebar"
+                    "footer";
+            }
+        }
+    </style>
+</head>
+
+<body>
+   <div class="container">
+        <header>
+            <nav>
+                <li><a href="#"><h1>Logo</h1></a></li>
+                <li><a href="#">Menu1</a></li>
+                <li><a href="#">Menu2</a></li>
+            </nav>
+            <button>CTA</button>
+        </header>
+        
+        <div class="main">
+            <h2>Mi contenido</h2>
+            <p>enfiuebfuiebfuiebfuiewbfuebfuebfuiwbfuifbubfwfwifwifbewufb
+                enfiuebfuiebfuiebfuiewbfuebfuebfuiwbfuifbubfwfwifwifbewufb
+                enfiuebfuiebfuiebfuiewbfuebfuebfuiwbfuifbubfwfwifwifbewufb
+                enfiuebfuiebfuiebfuiewbfuebfuebfuiwbfuifbubfwfwifwifbewufb
+                enfiuebfuiebfuiebfuiewbfuebfuebfuiwbfuifbubfwfwifwifbewufb
+                enfiuebfuiebfuiebfuiewbfuebfuebfuiwbfuifbubfwfwifwifbewufb
+            </p>
+            <img src="https://picsum.photos/id/1/500/550">
+        </div>
+
+        <div class="sidebar">
+            <h3>Sidebar</h3>
+        </div>
+        
+        <footer>
+            <h3>Mi footer</h3>
+            <p>Mi footer con grid</p>
+        </footer>
+   </div>
+</body> 
+</html> 
